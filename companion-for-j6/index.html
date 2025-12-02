@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Companion for J-6 | Control your J-6, from your phone</title>
+  <meta name="description" content="An unofficial companion app for the Roland AIRA Compact J-6 Chord Synthesizer. Control patterns, BPM, and transport from your Android device.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background-color: #1a1a2e;
+      color: #4a9eff;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero .tagline {
+      font-size: 1.25rem;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    .hero .tagline-ja {
+      font-size: 1rem;
+      color: #666;
+      margin-top: -32px;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: #4a9eff;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background-color: #6eb3ff;
+    }
+
+    .btn-secondary {
+      background-color: #1a1a1a;
+      color: #fff;
+      border: 1px solid #333;
+    }
+
+    .btn-secondary:hover {
+      background-color: #252525;
+    }
+
+    /* Features */
+    .features {
+      padding: 80px 0;
+      border-top: 1px solid #222;
+    }
+
+    .features h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* How it works */
+    .how-it-works {
+      padding: 80px 0;
+      border-top: 1px solid #222;
+    }
+
+    .how-it-works h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background-color: #4a9eff;
+      color: #000;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    /* Info */
+    .info {
+      padding: 80px 0;
+      border-top: 1px solid #222;
+      text-align: center;
+    }
+
+    .info-box {
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 32px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .info-box h3 {
+      color: #4a9eff;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .info-box p {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid #222;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .copyright {
+      color: #555;
+      font-size: 0.8rem;
+    }
+
+    .trademark {
+      color: #444;
+      font-size: 0.75rem;
+      margin-top: 16px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero .tagline {
+        font-size: 1rem;
+      }
+
+      .steps {
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="./" class="logo">
+          Companion for J-6
+          <span class="badge">Unofficial</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Control your J-6,<br>from your phone</h1>
+        <p class="tagline">A companion app for the Roland AIRA Compact J-6</p>
+        <p class="tagline-ja">J-6を、もっと手軽に</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
+            Google Play (Coming Soon)
+          </a>
+          <a href="https://github.com/fufabu" class="btn btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🎹</div>
+            <h3>Pattern Selection</h3>
+            <p>Browse and select from all 64 patterns (8 banks × 8 patterns) with a visual grid interface.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>BPM Control</h3>
+            <p>Adjust tempo with a smooth slider. See real-time BPM sync from your J-6.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">▶️</div>
+            <h3>Transport Control</h3>
+            <p>Start and stop playback with large, easy-to-tap buttons.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <h3>USB Connection</h3>
+            <p>Simple USB cable connection. No Bluetooth pairing, no WiFi setup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Connect</h3>
+            <p>Connect your J-6 to your Android phone via USB cable</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Launch</h3>
+            <p>Open the app and it auto-detects your J-6</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Control</h3>
+            <p>Start controlling patterns, BPM, and transport</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <div class="container">
+        <div class="info-box">
+          <h3>Free & Ad-Free</h3>
+          <p>Companion for J-6 is completely free with no ads. Made by a J-6 user, for J-6 users.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="en/privacy">Privacy Policy</a>
+        <a href="ja/privacy">プライバシーポリシー</a>
+        <a href="en/terms">Terms of Service</a>
+        <a href="ja/terms">利用規約</a>
+      </div>
+      <p class="copyright">© 2025 fufabu</p>
+      <p class="trademark">Roland, AIRA Compact, and J-6 are trademarks of Roland Corporation. This app is not affiliated with or endorsed by Roland Corporation.</p>
+    </div>
+  </footer>
+</body>
+</html>
