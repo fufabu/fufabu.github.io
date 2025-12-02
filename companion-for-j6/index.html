@@ -54,6 +54,30 @@
       margin-left: 8px;
     }
 
+    .lang-selector {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-selector a {
+      padding: 6px 12px;
+      color: #888;
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .lang-selector a:hover {
+      color: #fff;
+      background-color: #1a1a1a;
+    }
+
+    .lang-selector a.active {
+      color: #fff;
+      background-color: #1a1a1a;
+    }
+
     /* Hero */
     .hero {
       padding: 80px 0;
@@ -70,13 +94,6 @@
     .hero .tagline {
       font-size: 1.25rem;
       color: #888;
-      margin-bottom: 40px;
-    }
-
-    .hero .tagline-ja {
-      font-size: 1rem;
-      color: #666;
-      margin-top: -32px;
       margin-bottom: 40px;
     }
 
@@ -301,6 +318,10 @@
           Companion for J-6
           <span class="badge">Unofficial</span>
         </a>
+        <div class="lang-selector">
+          <a href="./" class="active">EN</a>
+          <a href="ja/">JA</a>
+        </div>
       </div>
     </div>
   </header>
@@ -310,7 +331,6 @@
       <div class="container">
         <h1>Control your J-6,<br>from your phone</h1>
         <p class="tagline">A companion app for the Roland AIRA Compact J-6</p>
-        <p class="tagline-ja">J-6を、もっと手軽に</p>
         <div class="cta-buttons">
           <a href="#" class="btn btn-primary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
