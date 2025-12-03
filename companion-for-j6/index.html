@@ -10,7 +10,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-G5ZQ7WR2WT');
+    if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      gtag('config', 'G-G5ZQ7WR2WT');
+    }
   </script>
   <meta name="description" content="An unofficial companion app for the Roland AIRA Compact J-6 Chord Synthesizer. Control patterns, BPM, and transport from your Android device.">
   <meta property="og:title" content="Companion for J-6">

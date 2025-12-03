@@ -10,7 +10,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-G5ZQ7WR2WT');
+    if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      gtag('config', 'G-G5ZQ7WR2WT');
+    }
   </script>
   <meta name="description" content="Roland AIRA Compact J-6用の非公式コンパニオンアプリ。パターン選択、BPM調整、トランスポート操作をAndroidデバイスから。">
   <meta property="og:title" content="Companion for J-6">
