@@ -116,7 +116,14 @@
     }
 
     .hero .tagline {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero .tagline-sub {
+      font-size: 1rem;
       color: #888;
       margin-bottom: 40px;
     }
@@ -195,6 +202,98 @@
     @media (max-width: 480px) {
       .preview-images img {
         height: 140px;
+      }
+    }
+
+    /* Why This App */
+    .why-app {
+      padding: 80px 0;
+      border-top: none;
+      background-image: linear-gradient(to right, transparent, #2196F3 15%, #2196F3 85%, transparent);
+      background-size: 100% 3px;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+
+    .why-app h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .comparison-card {
+      padding: 32px;
+      border-radius: 12px;
+      background-color: #111;
+    }
+
+    .comparison-card.before {
+      border: 1px solid #333;
+    }
+
+    .comparison-card.after {
+      border: 1px solid #2196F3;
+      background: linear-gradient(135deg, #0d1a2a 0%, #111 100%);
+    }
+
+    .comparison-card h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    .comparison-card.before h3 {
+      color: #666;
+    }
+
+    .comparison-card.after h3 {
+      color: #2196F3;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+    }
+
+    .comparison-card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .comparison-card.before li {
+      color: #888;
+    }
+
+    .comparison-card.after li {
+      color: #ccc;
+    }
+
+    .comparison-card li .icon {
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 640px) {
+      .comparison {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .comparison-card {
+        padding: 24px;
       }
     }
 
@@ -604,13 +703,14 @@
     <section class="hero">
       <div class="container">
         <img src="images/hero-logo.png" alt="Companion for J-6" class="hero-logo">
-        <p class="tagline">Control patterns, BPM, and more — right from your Android</p>
+        <p class="tagline">See all 64 patterns at a glance. No more menu diving.</p>
+        <p class="tagline-sub">A free Android app for <span class="j6-brand">J-6</span> owners who want faster pattern switching and full visibility.</p>
         <div class="cta-buttons">
           <a href="https://groups.google.com/g/j6-companion-testers" class="btn btn-primary" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
             </svg>
-            Become a Tester
+            Try Free Beta
           </a>
         </div>
       </div>
@@ -622,6 +722,32 @@
           <img src="images/Remote_portrait.png" alt="Remote control">
           <img src="images/ChordSetList_portrait.png" alt="Chord sets">
           <img src="images/StyleReference_portrait.png" alt="Phrases">
+        </div>
+      </div>
+    </section>
+
+    <section class="why-app">
+      <div class="container">
+        <h2>Why Use This App?</h2>
+        <div class="comparison">
+          <div class="comparison-card before">
+            <h3>J-6 Alone</h3>
+            <ul>
+              <li><span class="icon">😓</span><span>Switch patterns with knob and buttons</span></li>
+              <li><span class="icon">🔍</span><span>Check current pattern on small display</span></li>
+              <li><span class="icon">📖</span><span>Flip through manual for chord sets</span></li>
+              <li><span class="icon">🎲</span><span>Trial and error to find the right phrase</span></li>
+            </ul>
+          </div>
+          <div class="comparison-card after">
+            <h3>With This App</h3>
+            <ul>
+              <li><span class="icon">👆</span><span>Tap any of 64 patterns instantly</span></li>
+              <li><span class="icon">👀</span><span>See which pattern is playing at a glance</span></li>
+              <li><span class="icon">🎹</span><span>Browse chord sets — see chord tones on keyboard</span></li>
+              <li><span class="icon">📋</span><span>Visual style & variation reference — find the right one fast</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -787,7 +913,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
           </svg>
-          Become a Tester
+          Try Free Beta
         </a>
       </div>
     </section>
