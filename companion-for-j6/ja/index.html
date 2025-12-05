@@ -960,6 +960,50 @@
         });
       });
     });
+
+    // Language switcher tracking
+    document.querySelectorAll('.lang-selector a').forEach(link => {
+      link.addEventListener('click', () => {
+        const lang = link.textContent.trim();
+        gtag('event', 'language_switch', {
+          'event_category': 'navigation',
+          'event_label': lang
+        });
+      });
+    });
+
+    // Try the App section link tracking
+    document.querySelectorAll('.beta-test .step a').forEach(link => {
+      link.addEventListener('click', () => {
+        const isGoogleGroup = link.href.includes('groups.google.com');
+        const label = isGoogleGroup ? 'google_group' : 'play_store';
+        gtag('event', 'try_app_link_click', {
+          'event_category': 'engagement',
+          'event_label': label
+        });
+      });
+    });
+
+    // Footer link tracking
+    document.querySelectorAll('.footer-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const label = link.href.includes('privacy') ? 'privacy' : 'terms';
+        gtag('event', 'footer_link_click', {
+          'event_category': 'navigation',
+          'event_label': label
+        });
+      });
+    });
+
+    // Screenshot preview tracking
+    document.querySelectorAll('.preview-images img').forEach((img, index) => {
+      img.addEventListener('click', () => {
+        gtag('event', 'screenshot_click', {
+          'event_category': 'engagement',
+          'event_label': img.alt || `screenshot_${index}`
+        });
+      });
+    });
   </script>
 </body>
 </html>
