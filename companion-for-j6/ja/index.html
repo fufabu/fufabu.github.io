@@ -949,6 +949,17 @@
     document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(el => {
       observer.observe(el);
     });
+
+    // CTA click tracking
+    document.querySelectorAll('.btn-primary').forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        const location = index === 0 ? 'hero' : 'bottom';
+        gtag('event', 'cta_click', {
+          'event_category': 'engagement',
+          'event_label': location
+        });
+      });
+    });
   </script>
 </body>
 </html>
