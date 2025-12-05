@@ -159,81 +159,43 @@
       background-color: #252525;
     }
 
-    /* Screenshots */
-    .screenshots {
-      padding: 80px 0;
-      border-top: none;
-      background-image: linear-gradient(to right, transparent, #2196F3 15%, #2196F3 85%, transparent);
-      background-size: 100% 3px;
-      background-position: top;
-      background-repeat: no-repeat;
+    /* Screenshots Preview */
+    .screenshots-preview {
+      padding: 40px 0 60px;
     }
 
-    .screenshot-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 32px;
-    }
-
-    .screenshot-tab {
-      padding: 8px 20px;
-      background-color: #1a1a1a;
-      color: #888;
-      border: 1px solid #333;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .screenshot-tab:hover {
-      color: #fff;
-      background-color: #252525;
-    }
-
-    .screenshot-tab.active {
-      background-color: #2196F3;
-      color: #fff;
-      border-color: #2196F3;
-    }
-
-    .screenshot-content {
-      display: none;
-    }
-
-    .screenshot-content.active {
+    .preview-images {
       display: flex;
       justify-content: center;
       gap: 24px;
-      flex-wrap: wrap;
     }
 
-    .screenshot-content img {
-      max-height: 400px;
-      max-width: 100%;
+    .preview-images img {
+      height: 280px;
       width: auto;
       border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
     }
 
-    #landscape img {
-      max-height: 220px;
+    .preview-images img:hover {
+      transform: translateY(-8px);
     }
 
-    .screenshot-item {
-      text-align: center;
+    @media (max-width: 768px) {
+      .preview-images {
+        gap: 12px;
+      }
+
+      .preview-images img {
+        height: 180px;
+      }
     }
 
-    .screenshot-item img {
-      display: block;
-      margin: 0 auto;
-    }
-
-    .screenshot-caption {
-      margin-top: 12px;
-      color: #888;
-      font-size: 0.85rem;
+    @media (max-width: 480px) {
+      .preview-images img {
+        height: 140px;
+      }
     }
 
     /* Features */
@@ -253,33 +215,127 @@
       margin-bottom: 48px;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 32px;
+    /* Feature Showcase */
+    .feature-showcase {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      margin-bottom: 64px;
     }
 
-    .feature-card {
-      background-color: #0d1a1a;
-      border: 1px solid #1a3a3a;
-      border-radius: 12px;
-      padding: 32px;
+    .feature-showcase-reverse {
+      flex-direction: row-reverse;
     }
 
-    .feature-icon {
-      font-size: 2rem;
+    .feature-showcase-image {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .feature-showcase-image img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-showcase-content {
+      flex: 1;
+    }
+
+    .feature-showcase-icon {
+      font-size: 2.5rem;
       margin-bottom: 16px;
     }
 
-    .feature-card h3 {
-      font-size: 1.125rem;
+    .feature-showcase-content h3 {
+      font-size: 1.5rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
+      color: #fff;
     }
 
-    .feature-card p {
+    .feature-showcase-content p {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Scroll Animations */
+    .fade-in-left,
+    .fade-in-right {
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in-left {
+      transform: translateX(-30px);
+    }
+
+    .fade-in-right {
+      transform: translateX(30px);
+    }
+
+    .fade-in-left.visible,
+    .fade-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Sub Features */
+    .sub-features {
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid #1a3a3a;
+    }
+
+    .sub-features h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    .sub-features-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .sub-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       color: #888;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .sub-icon {
+      font-size: 1.25rem;
+    }
+
+    /* Responsive: Stack on mobile */
+    @media (max-width: 768px) {
+      .feature-showcase,
+      .feature-showcase-reverse {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .feature-showcase-image {
+        max-width: 250px;
+      }
+
+      .feature-showcase-content h3 {
+        font-size: 1.25rem;
+      }
+
+      .feature-showcase-content p {
+        font-size: 0.9rem;
+      }
     }
 
     /* How it works */
@@ -336,6 +392,19 @@
       font-size: 0.85rem;
     }
 
+    .step p strong {
+      color: #e85d2d;
+      font-weight: 600;
+    }
+
+    .steps-4 {
+      gap: 32px;
+    }
+
+    .steps-4 .step {
+      max-width: 180px;
+    }
+
     /* Beta Test */
     .beta-test {
       padding: 80px 0;
@@ -356,7 +425,50 @@
     .beta-description {
       text-align: center;
       color: #888;
+      margin-bottom: 32px;
+    }
+
+    /* Trust badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
       margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6b8f8f;
+      font-size: 0.9rem;
+    }
+
+    .trust-badge .badge-icon {
+      font-size: 1.25rem;
+    }
+
+    /* Beta note */
+    .beta-note {
+      margin-top: 40px;
+      padding: 16px 24px;
+      background-color: #0d1a1a;
+      border: 1px solid #1a3a3a;
+      border-radius: 8px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .beta-note p {
+      color: #888;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .beta-note .note-icon {
+      margin-right: 8px;
     }
 
     .beta-test .step p a {
@@ -406,6 +518,19 @@
     .requirement-item .text {
       font-size: 0.9rem;
       color: #ccc;
+    }
+
+    /* CTA Bottom */
+    .cta-bottom {
+      padding: 64px 0;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    .cta-bottom p {
+      font-size: 1.25rem;
+      color: #888;
+      margin-bottom: 24px;
     }
 
     /* Footer */
@@ -491,35 +616,12 @@
       </div>
     </section>
 
-    <section class="screenshots">
+    <section class="screenshots-preview">
       <div class="container">
-        <div class="screenshot-tabs">
-          <button class="screenshot-tab active" data-target="portrait">縦画面</button>
-          <button class="screenshot-tab" data-target="landscape">横画面</button>
-        </div>
-        <div class="screenshot-content active" id="portrait">
-          <div class="screenshot-item">
-            <img src="../images/Remote_portrait.png" alt="BPMスライダーとパターン選択のメイン画面">
-            <p class="screenshot-caption">BPM・パターン操作</p>
-          </div>
-          <div class="screenshot-item">
-            <img src="../images/ChordSetList_portrait.png" alt="100種類のコードセット一覧">
-            <p class="screenshot-caption">コードセット一覧</p>
-          </div>
-          <div class="screenshot-item">
-            <img src="../images/StyleReference_portrait.png" alt="スタイルとバリエーションのリファレンス、リズムパターン可視化">
-            <p class="screenshot-caption">スタイルリファレンス</p>
-          </div>
-        </div>
-        <div class="screenshot-content" id="landscape">
-          <div class="screenshot-item">
-            <img src="../images/Remote_landscape.png" alt="横画面で8バンク全て表示">
-            <p class="screenshot-caption">8バンクを一覧表示</p>
-          </div>
-          <div class="screenshot-item">
-            <img src="../images/ChordSetList_landscape.png" alt="横画面でコードセットと鍵盤を同時表示">
-            <p class="screenshot-caption">鍵盤でコード構成音を確認</p>
-          </div>
+        <div class="preview-images">
+          <img src="../images/Remote_portrait.png" alt="リモートコントロール">
+          <img src="../images/ChordSetList_portrait.png" alt="コードセット">
+          <img src="../images/StyleReference_portrait.png" alt="フレーズ">
         </div>
       </div>
     </section>
@@ -527,37 +629,65 @@
     <section class="features">
       <div class="container">
         <h2>機能</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🎹</div>
+
+        <!-- Feature 1: Pattern Selection -->
+        <div class="feature-showcase">
+          <div class="feature-showcase-image fade-in-left">
+            <img src="../images/Remote_portrait.png" alt="パターン選択のグリッド表示">
+          </div>
+          <div class="feature-showcase-content fade-in-right">
+            <div class="feature-showcase-icon">🎹</div>
             <h3>パターン選択</h3>
-            <p>64パターン（8バンク × 8パターン）をグリッド表示で簡単に選択。</p>
+            <p>64パターン（8バンク × 8）をグリッド表示。バンクをタップすれば即座に切り替え。横画面なら全8バンクを一覧表示できます。</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">⏱️</div>
+        </div>
+
+        <!-- Feature 2: BPM Control -->
+        <div class="feature-showcase feature-showcase-reverse">
+          <div class="feature-showcase-image fade-in-right">
+            <img src="../images/Remote_landscape.png" alt="BPMスライダーとクイックボタン">
+          </div>
+          <div class="feature-showcase-content fade-in-left">
+            <div class="feature-showcase-icon">⏱️</div>
             <h3>BPM調整</h3>
-            <p>スライダーでテンポを調整。<span class="j6-brand">J-6</span>からのBPM同期もリアルタイム表示。</p>
+            <p>スライダーで40-300 BPMを調整。±1, ±5, ±10のクイックボタンで微調整も簡単。<span class="j6-brand">J-6</span>のMIDIクロックとリアルタイム同期します。</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">▶️</div>
-            <h3>トランスポート</h3>
-            <p>タップで簡単に再生/停止。</p>
+        </div>
+
+        <!-- Feature 3: Chord Set Browser -->
+        <div class="feature-showcase">
+          <div class="feature-showcase-image fade-in-left">
+            <img src="../images/ChordSetList_landscape.png" alt="コードセット一覧と鍵盤表示">
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔌</div>
-            <h3>USB接続</h3>
-            <p>USBケーブル1本で接続。Bluetoothペアリング不要、WiFi設定不要。</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎵</div>
+          <div class="feature-showcase-content fade-in-right">
+            <div class="feature-showcase-icon">🎵</div>
             <h3>コードセット一覧</h3>
-            <p><span class="j6-brand">J-6</span>内蔵の100種類のコードセットを一覧表示。各コードの構成音を鍵盤で確認できます。</p>
+            <p>内蔵100種類のコードセットを一覧表示。Pop、Jazz、R&Bなどジャンルでフィルター。各コードの構成音を鍵盤で確認できます。</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔄</div>
-            <h3>バックグラウンド同期</h3>
-            <p>アプリがバックグラウンドでもMIDIクロック同期を維持。</p>
+        </div>
+
+        <!-- Feature 4: Phrase Reference -->
+        <div class="feature-showcase feature-showcase-reverse">
+          <div class="feature-showcase-image fade-in-right">
+            <img src="../images/StyleReference_portrait.png" alt="フレーズリファレンスとリズムパターン">
           </div>
+          <div class="feature-showcase-content fade-in-left">
+            <div class="feature-showcase-icon">📋</div>
+            <h3>フレーズリファレンス</h3>
+            <p>9スタイル × 12バリエーションを一覧表示。リズムパターンを視覚化しているので、試行錯誤せずに曲に合うフレーズを探せます。</p>
+          </div>
+        </div>
+
+        <!-- Sub Features -->
+        <div class="sub-features">
+          <h3>その他の機能</h3>
+          <ul class="sub-features-list">
+            <li><span class="sub-icon">▶️</span> ワンタップで再生/停止</li>
+            <li><span class="sub-icon">🔌</span> USB接続 — ペアリング不要</li>
+            <li><span class="sub-icon">🔄</span> 切断時に自動再接続</li>
+            <li><span class="sub-icon">📡</span> バックグラウンドでもMIDI接続を維持</li>
+            <li><span class="sub-icon">📱</span> 縦画面・横画面どちらも対応</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -565,21 +695,26 @@
     <section class="how-it-works">
       <div class="container">
         <h2>使い方</h2>
-        <div class="steps">
+        <div class="steps steps-4">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>接続</h3>
-            <p><span class="j6-brand">J-6</span>とAndroidスマホをUSBケーブルで接続</p>
+            <h3>設定</h3>
+            <p><span class="j6-brand">J-6</span>で <strong>MENU → Sync → USB</strong> に設定</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
-            <h3>起動</h3>
-            <p>アプリを開いて<span class="j6-brand">J-6</span>を選択して接続</p>
+            <h3>接続</h3>
+            <p><span class="j6-brand">J-6</span>とスマホをUSBケーブルで接続</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
+            <h3>起動</h3>
+            <p>アプリを開いて<span class="j6-brand">J-6</span>を選択</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
             <h3>操作</h3>
-            <p>パターン、BPM、トランスポートを操作</p>
+            <p>パターン、BPMなどを操作開始</p>
           </div>
         </div>
       </div>
@@ -589,6 +724,22 @@
       <div class="container">
         <h2>アプリを試す</h2>
         <p class="beta-description">現在ベータ版として公開中。いち早くお試しいただけます！</p>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <span class="badge-icon">🆓</span>
+            <span>完全無料</span>
+          </div>
+          <div class="trust-badge">
+            <span class="badge-icon">🔒</span>
+            <span>登録不要 — グループ参加だけでOK</span>
+          </div>
+          <div class="trust-badge">
+            <span class="badge-icon">🚪</span>
+            <span>いつでも退会OK</span>
+          </div>
+        </div>
+
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
@@ -605,6 +756,10 @@
             <h3>インストール</h3>
             <p>Google Play Storeからアプリをダウンロード</p>
           </div>
+        </div>
+
+        <div class="beta-note">
+          <p><span class="note-icon">💡</span>Googleグループはテスター招待の配信用です。スパムや頻繁なメールは送りません。</p>
         </div>
       </div>
     </section>
@@ -625,6 +780,18 @@
       </div>
     </section>
 
+    <section class="cta-bottom">
+      <div class="container">
+        <p>試してみませんか？</p>
+        <a href="https://groups.google.com/g/j6-companion-testers" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+          テスターになる
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -639,13 +806,22 @@
     </div>
   </footer>
   <script>
-    document.querySelectorAll('.screenshot-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.screenshot-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.screenshot-content').forEach(c => c.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.target).classList.add('active');
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(el => {
+      observer.observe(el);
     });
   </script>
 </body>
