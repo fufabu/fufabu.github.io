@@ -491,6 +491,21 @@
       font-size: 0.85rem;
     }
 
+    .step-time {
+      color: #2196F3;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .setup-time {
+      text-align: center;
+      color: #2196F3;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
     .step p strong {
       color: #e85d2d;
       font-weight: 600;
@@ -579,44 +594,43 @@
       text-decoration: underline;
     }
 
-    /* Requirements */
-    .requirements {
-      padding: 80px 0;
-      border-top: 1px solid #222;
+    /* FAQ */
+    .faq {
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid #333;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .requirements h2 {
-      font-size: 1.75rem;
+    .faq h3 {
+      font-size: 1.25rem;
       font-weight: 600;
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 24px;
+      color: #fff;
     }
 
-    .requirements-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .requirement-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px;
-      background-color: #0d1a1a;
-      border: 1px solid #1a3a3a;
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 16px 20px;
+      background-color: #111;
+      border: 1px solid #222;
       border-radius: 8px;
     }
 
-    .requirement-item .icon {
-      font-size: 1.5rem;
+    .faq-item h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
     }
 
-    .requirement-item .text {
-      font-size: 0.9rem;
-      color: #ccc;
+    .faq-item p {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.6;
     }
 
     /* CTA Bottom */
@@ -671,6 +685,94 @@
       margin-right: auto;
     }
 
+    /* Lightbox */
+    .lightbox {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 75%;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox.active img {
+      transform: scale(1);
+    }
+
+    .lightbox-toggle {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    .toggle-btn {
+      padding: 8px 16px;
+      background: transparent;
+      border: 1px solid #555;
+      color: #888;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      border-color: #888;
+      color: #fff;
+    }
+
+    .toggle-btn.active {
+      background: #2196F3;
+      border-color: #2196F3;
+      color: #fff;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    .preview-images img,
+    .feature-showcase-image img {
+      cursor: pointer;
+    }
+
     /* Responsive */
     @media (max-width: 640px) {
       .hero .tagline {
@@ -703,14 +805,14 @@
     <section class="hero">
       <div class="container">
         <img src="../images/hero-logo.png" alt="Companion for J-6" class="hero-logo">
-        <p class="tagline">64パターンを一覧表示。メニュー操作から解放されよう。</p>
-        <p class="tagline-sub">パターン切替をもっと速く、もっと見やすく。<span class="j6-brand">J-6</span>ユーザーのための無料Androidアプリ。</p>
+        <p class="tagline"><span class="j6-brand">J-6</span>と遊ぶお供に</p>
+        <p class="tagline-sub">パターン、コード、フレーズの確認がもっと手軽に。</p>
         <div class="cta-buttons">
           <a href="https://groups.google.com/g/j6-companion-testers" class="btn btn-primary" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
             </svg>
-            無料で試す
+            ベータ版を試す
           </a>
         </div>
       </div>
@@ -719,16 +821,16 @@
     <section class="screenshots-preview">
       <div class="container">
         <div class="preview-images">
-          <img src="../images/Remote_portrait.png" alt="リモートコントロール">
-          <img src="../images/ChordSetList_portrait.png" alt="コードセット">
-          <img src="../images/StyleReference_portrait.png" alt="フレーズ">
+          <img src="../images/Remote_portrait.png" alt="リモートコントロール" data-portrait="../images/Remote_portrait.png" data-landscape="../images/Remote_landscape.png">
+          <img src="../images/ChordSetList_portrait.png" alt="コードセット" data-portrait="../images/ChordSetList_portrait.png" data-landscape="../images/ChordSetList_landscape.png">
+          <img src="../images/StyleReference_portrait.png" alt="フレーズ" data-portrait="../images/StyleReference_portrait.png" data-landscape="../images/StyleReference_landscape.png">
         </div>
       </div>
     </section>
 
     <section class="why-app">
       <div class="container">
-        <h2>なぜこのアプリ？</h2>
+        <h2>こんなお手伝いができます</h2>
         <div class="comparison">
           <div class="comparison-card before">
             <h3>J-6単体</h3>
@@ -759,7 +861,7 @@
         <!-- Feature 1: Pattern Selection -->
         <div class="feature-showcase">
           <div class="feature-showcase-image fade-in-left">
-            <img src="../images/Remote_portrait.png" alt="パターン選択のグリッド表示">
+            <img src="../images/Remote_portrait.png" alt="パターン選択のグリッド表示" data-portrait="../images/Remote_portrait.png" data-landscape="../images/Remote_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-right">
             <div class="feature-showcase-icon">🎹</div>
@@ -771,7 +873,7 @@
         <!-- Feature 2: BPM Control -->
         <div class="feature-showcase feature-showcase-reverse">
           <div class="feature-showcase-image fade-in-right">
-            <img src="../images/Remote_landscape.png" alt="BPMスライダーとクイックボタン">
+            <img src="../images/Remote_landscape.png" alt="BPMスライダーとクイックボタン" data-portrait="../images/Remote_portrait.png" data-landscape="../images/Remote_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-left">
             <div class="feature-showcase-icon">⏱️</div>
@@ -783,7 +885,7 @@
         <!-- Feature 3: Chord Set Browser -->
         <div class="feature-showcase">
           <div class="feature-showcase-image fade-in-left">
-            <img src="../images/ChordSetList_landscape.png" alt="コードセット一覧と鍵盤表示">
+            <img src="../images/ChordSetList_landscape.png" alt="コードセット一覧と鍵盤表示" data-portrait="../images/ChordSetList_portrait.png" data-landscape="../images/ChordSetList_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-right">
             <div class="feature-showcase-icon">🎵</div>
@@ -795,7 +897,7 @@
         <!-- Feature 4: Phrase Reference -->
         <div class="feature-showcase feature-showcase-reverse">
           <div class="feature-showcase-image fade-in-right">
-            <img src="../images/StyleReference_portrait.png" alt="フレーズリファレンスとリズムパターン">
+            <img src="../images/StyleReference_portrait.png" alt="フレーズリファレンスとリズムパターン" data-portrait="../images/StyleReference_portrait.png" data-landscape="../images/StyleReference_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-left">
             <div class="feature-showcase-icon">📋</div>
@@ -849,16 +951,17 @@
     <section class="beta-test">
       <div class="container">
         <h2>アプリを試す</h2>
-        <p class="beta-description">現在ベータ版として公開中。いち早くお試しいただけます！</p>
+        <p class="beta-description">J-6ユーザーとして自分が欲しかったものを作りました。あなたにも役立てば嬉しいです。</p>
+        <p class="setup-time">⏱️ 参加まで約2分</p>
 
         <div class="trust-badges">
           <div class="trust-badge">
-            <span class="badge-icon">🆓</span>
-            <span>完全無料</span>
+            <span class="badge-icon">🎹</span>
+            <span>同じJ-6ユーザーが開発</span>
           </div>
           <div class="trust-badge">
-            <span class="badge-icon">🔒</span>
-            <span>登録不要 — グループ参加だけでOK</span>
+            <span class="badge-icon">🆓</span>
+            <span>完全無料</span>
           </div>
           <div class="trust-badge">
             <span class="badge-icon">🚪</span>
@@ -869,17 +972,20 @@
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>グループに参加</h3>
+            <h3>アクセスを取得</h3>
+            <p class="step-time">約30秒</p>
             <p>テスター用の<a href="https://groups.google.com/g/j6-companion-testers" target="_blank" rel="noopener">Googleグループ</a>に参加</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <h3>オプトイン</h3>
+            <p class="step-time">約30秒</p>
             <p><a href="https://play.google.com/apps/testing/com.fufabu.cj6" target="_blank" rel="noopener">Play Storeのテストページ</a>を開いて招待を承諾</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
             <h3>インストール</h3>
+            <p class="step-time">約1分</p>
             <p>Google Play Storeからアプリをダウンロード</p>
           </div>
         </div>
@@ -887,20 +993,28 @@
         <div class="beta-note">
           <p><span class="note-icon">💡</span>Googleグループはテスター招待の配信用です。スパムや頻繁なメールは送りません。</p>
         </div>
-      </div>
-    </section>
 
-    <section class="requirements">
-      <div class="container">
-        <h2>動作環境</h2>
-        <div class="requirements-grid">
-          <div class="requirement-item">
-            <span class="icon">📱</span>
-            <span class="text">Android 8.0+</span>
+        <div class="faq">
+          <h3>よくある質問</h3>
+          <div class="faq-item">
+            <h4>本当に無料？</h4>
+            <p>はい、完全無料です。広告なし、アプリ内課金なし、隠れたコストはありません。</p>
           </div>
-          <div class="requirement-item">
-            <span class="icon">🔌</span>
-            <span class="text">USB OTG 対応</span>
+          <div class="faq-item">
+            <h4>フィードバックは反映される？</h4>
+            <p>はい。このアプリはJ-6ユーザーがJ-6ユーザーのために作っています。あなたのフィードバックが新機能に直接反映されます。</p>
+          </div>
+          <div class="faq-item">
+            <h4>いつでもやめられる？</h4>
+            <p>はい。Googleグループを退会してアプリをアンインストールするだけでOKです。</p>
+          </div>
+          <div class="faq-item">
+            <h4>なぜGoogleグループへの参加が必要？</h4>
+            <p>Google Playでベータ版を配布する仕組み上、必要なんです。参加するとPlay Storeからベータ版をダウンロードできます。スパムは届きません。</p>
+          </div>
+          <div class="faq-item">
+            <h4>動作しない場合は？</h4>
+            <p><strong>Android 7.0以上</strong>、<strong>USB OTG対応</strong>が必要です。一部の端末はUSB OTGに対応していない場合があります。</p>
           </div>
         </div>
       </div>
@@ -913,12 +1027,22 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
           </svg>
-          無料で試す
+          ベータ版を試す
         </a>
       </div>
     </section>
 
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="">
+    <div class="lightbox-toggle">
+      <button class="toggle-btn active" data-mode="portrait">📱 縦画面</button>
+      <button class="toggle-btn" data-mode="landscape">📺 横画面</button>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
@@ -1003,6 +1127,61 @@
           'event_label': img.alt || `screenshot_${index}`
         });
       });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const toggleBtns = lightbox.querySelectorAll('.toggle-btn');
+    let currentImageData = { portrait: '', landscape: '' };
+
+    document.querySelectorAll('.preview-images img, .feature-showcase-image img').forEach(img => {
+      img.addEventListener('click', () => {
+        currentImageData.portrait = img.dataset.portrait || img.src;
+        currentImageData.landscape = img.dataset.landscape || img.src;
+
+        // 元の画像がportraitかlandscapeかを判定
+        const isLandscape = img.src.includes('landscape');
+        const mode = isLandscape ? 'landscape' : 'portrait';
+
+        lightboxImg.src = currentImageData[mode];
+        lightboxImg.alt = img.alt;
+
+        // ボタンの状態を更新
+        toggleBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.mode === mode);
+        });
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // 切り替えボタン
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const mode = btn.dataset.mode;
+        lightboxImg.src = currentImageData[mode];
+
+        toggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxClose) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>

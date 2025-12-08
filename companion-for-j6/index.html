@@ -491,6 +491,21 @@
       font-size: 0.85rem;
     }
 
+    .step-time {
+      color: #2196F3;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .setup-time {
+      text-align: center;
+      color: #2196F3;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
     .step p strong {
       color: #ccc;
       font-family: monospace;
@@ -570,6 +585,45 @@
       margin-right: 8px;
     }
 
+    /* FAQ */
+    .faq {
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid #333;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .faq h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 16px 20px;
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 8px;
+    }
+
+    .faq-item h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.6;
+    }
+
     .beta-test .step p a {
       color: #2196F3;
       text-decoration: none;
@@ -577,46 +631,6 @@
 
     .beta-test .step p a:hover {
       text-decoration: underline;
-    }
-
-    /* Requirements */
-    .requirements {
-      padding: 80px 0;
-      border-top: 1px solid #222;
-    }
-
-    .requirements h2 {
-      font-size: 1.75rem;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .requirements-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .requirement-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px;
-      background-color: #0d1a1a;
-      border: 1px solid #1a3a3a;
-      border-radius: 8px;
-    }
-
-    .requirement-item .icon {
-      font-size: 1.5rem;
-    }
-
-    .requirement-item .text {
-      font-size: 0.9rem;
-      color: #ccc;
     }
 
     /* CTA Bottom */
@@ -671,6 +685,94 @@
       margin-right: auto;
     }
 
+    /* Lightbox */
+    .lightbox {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 75%;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox.active img {
+      transform: scale(1);
+    }
+
+    .lightbox-toggle {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    .toggle-btn {
+      padding: 8px 16px;
+      background: transparent;
+      border: 1px solid #555;
+      color: #888;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      border-color: #888;
+      color: #fff;
+    }
+
+    .toggle-btn.active {
+      background: #2196F3;
+      border-color: #2196F3;
+      color: #fff;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    .preview-images img,
+    .feature-showcase-image img {
+      cursor: pointer;
+    }
+
     /* Responsive */
     @media (max-width: 640px) {
       .hero .tagline {
@@ -703,14 +805,14 @@
     <section class="hero">
       <div class="container">
         <img src="images/hero-logo.png" alt="Companion for J-6" class="hero-logo">
-        <p class="tagline">See all 64 patterns at a glance. No more menu diving.</p>
-        <p class="tagline-sub">A free Android app for <span class="j6-brand">J-6</span> owners who want faster pattern switching and full visibility.</p>
+        <p class="tagline">Your companion for jamming with <span class="j6-brand">J-6</span></p>
+        <p class="tagline-sub">Makes browsing patterns, chords, and phrases a bit easier.</p>
         <div class="cta-buttons">
           <a href="https://groups.google.com/g/j6-companion-testers" class="btn btn-primary" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
             </svg>
-            Try Free Beta
+            Join the Beta
           </a>
         </div>
       </div>
@@ -719,16 +821,16 @@
     <section class="screenshots-preview">
       <div class="container">
         <div class="preview-images">
-          <img src="images/Remote_portrait.png" alt="Remote control">
-          <img src="images/ChordSetList_portrait.png" alt="Chord sets">
-          <img src="images/StyleReference_portrait.png" alt="Phrases">
+          <img src="images/Remote_portrait.png" alt="Remote control" data-portrait="images/Remote_portrait.png" data-landscape="images/Remote_landscape.png">
+          <img src="images/ChordSetList_portrait.png" alt="Chord sets" data-portrait="images/ChordSetList_portrait.png" data-landscape="images/ChordSetList_landscape.png">
+          <img src="images/StyleReference_portrait.png" alt="Phrases" data-portrait="images/StyleReference_portrait.png" data-landscape="images/StyleReference_landscape.png">
         </div>
       </div>
     </section>
 
     <section class="why-app">
       <div class="container">
-        <h2>Why Use This App?</h2>
+        <h2>How this app can help</h2>
         <div class="comparison">
           <div class="comparison-card before">
             <h3>J-6 Alone</h3>
@@ -759,7 +861,7 @@
         <!-- Feature 1: Pattern Selection -->
         <div class="feature-showcase">
           <div class="feature-showcase-image fade-in-left">
-            <img src="images/Remote_portrait.png" alt="Pattern selection grid interface">
+            <img src="images/Remote_portrait.png" alt="Pattern selection grid interface" data-portrait="images/Remote_portrait.png" data-landscape="images/Remote_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-right">
             <div class="feature-showcase-icon">🎹</div>
@@ -771,7 +873,7 @@
         <!-- Feature 2: BPM Control -->
         <div class="feature-showcase feature-showcase-reverse">
           <div class="feature-showcase-image fade-in-right">
-            <img src="images/Remote_landscape.png" alt="BPM control with slider and quick buttons">
+            <img src="images/Remote_landscape.png" alt="BPM control with slider and quick buttons" data-portrait="images/Remote_portrait.png" data-landscape="images/Remote_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-left">
             <div class="feature-showcase-icon">⏱️</div>
@@ -783,7 +885,7 @@
         <!-- Feature 3: Chord Set Browser -->
         <div class="feature-showcase">
           <div class="feature-showcase-image fade-in-left">
-            <img src="images/ChordSetList_landscape.png" alt="Chord set browser with piano keyboard">
+            <img src="images/ChordSetList_landscape.png" alt="Chord set browser with piano keyboard" data-portrait="images/ChordSetList_portrait.png" data-landscape="images/ChordSetList_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-right">
             <div class="feature-showcase-icon">🎵</div>
@@ -795,7 +897,7 @@
         <!-- Feature 4: Phrase Reference -->
         <div class="feature-showcase feature-showcase-reverse">
           <div class="feature-showcase-image fade-in-right">
-            <img src="images/StyleReference_portrait.png" alt="Phrase reference with rhythm patterns">
+            <img src="images/StyleReference_portrait.png" alt="Phrase reference with rhythm patterns" data-portrait="images/StyleReference_portrait.png" data-landscape="images/StyleReference_landscape.png">
           </div>
           <div class="feature-showcase-content fade-in-left">
             <div class="feature-showcase-icon">📋</div>
@@ -849,16 +951,17 @@
     <section class="beta-test">
       <div class="container">
         <h2>Try the App</h2>
-        <p class="beta-description">The app is currently in beta. Get early access and help shape its future!</p>
+        <p class="beta-description">As a J-6 user, I built this to scratch my own itch. Hope it helps you too!</p>
+        <p class="setup-time">⏱️ Takes just 2 minutes to join</p>
 
         <div class="trust-badges">
           <div class="trust-badge">
-            <span class="badge-icon">🆓</span>
-            <span>Completely free</span>
+            <span class="badge-icon">🎹</span>
+            <span>Made by a J-6 user, for J-6 users</span>
           </div>
           <div class="trust-badge">
-            <span class="badge-icon">🔒</span>
-            <span>No signup — just join the Google Group</span>
+            <span class="badge-icon">🆓</span>
+            <span>Completely free</span>
           </div>
           <div class="trust-badge">
             <span class="badge-icon">🚪</span>
@@ -869,17 +972,20 @@
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>Join Group</h3>
+            <h3>Get Access</h3>
+            <p class="step-time">~30 sec</p>
             <p>Join the <a href="https://groups.google.com/g/j6-companion-testers" target="_blank" rel="noopener">Google Group</a> for testers</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <h3>Opt In</h3>
+            <p class="step-time">~30 sec</p>
             <p>Open the <a href="https://play.google.com/apps/testing/com.fufabu.cj6" target="_blank" rel="noopener">Play Store test page</a> and accept the invitation</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
             <h3>Install</h3>
+            <p class="step-time">~1 min</p>
             <p>Download the app from Google Play Store</p>
           </div>
         </div>
@@ -887,20 +993,28 @@
         <div class="beta-note">
           <p><span class="note-icon">💡</span>The Google Group is only used for tester invitations. No spam or frequent emails.</p>
         </div>
-      </div>
-    </section>
 
-    <section class="requirements">
-      <div class="container">
-        <h2>Requirements</h2>
-        <div class="requirements-grid">
-          <div class="requirement-item">
-            <span class="icon">📱</span>
-            <span class="text">Android 8.0+</span>
+        <div class="faq">
+          <h3>Frequently Asked Questions</h3>
+          <div class="faq-item">
+            <h4>Is this really free?</h4>
+            <p>Yes, completely free. No ads, no in-app purchases, no hidden costs.</p>
           </div>
-          <div class="requirement-item">
-            <span class="icon">🔌</span>
-            <span class="text">USB OTG support</span>
+          <div class="faq-item">
+            <h4>Will my feedback be used?</h4>
+            <p>Absolutely. This app is built by a J-6 user for J-6 users. Your feedback directly shapes new features.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Can I leave the beta anytime?</h4>
+            <p>Yes. Just leave the Google Group and uninstall the app. No questions asked.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Why do I need to join a Google Group?</h4>
+            <p>It's how Google Play handles beta testing. Once you join, you can download the beta from Play Store. No spam.</p>
+          </div>
+          <div class="faq-item">
+            <h4>It doesn't work on my device?</h4>
+            <p>This app requires <strong>Android 7.0+</strong> and <strong>USB OTG support</strong>. Some devices may not support USB OTG.</p>
           </div>
         </div>
       </div>
@@ -913,12 +1027,22 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
           </svg>
-          Try Free Beta
+          Join the Beta
         </a>
       </div>
     </section>
 
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="">
+    <div class="lightbox-toggle">
+      <button class="toggle-btn active" data-mode="portrait">📱 Portrait</button>
+      <button class="toggle-btn" data-mode="landscape">📺 Landscape</button>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
@@ -1003,6 +1127,61 @@
           'event_label': img.alt || `screenshot_${index}`
         });
       });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const toggleBtns = lightbox.querySelectorAll('.toggle-btn');
+    let currentImageData = { portrait: '', landscape: '' };
+
+    document.querySelectorAll('.preview-images img, .feature-showcase-image img').forEach(img => {
+      img.addEventListener('click', () => {
+        currentImageData.portrait = img.dataset.portrait || img.src;
+        currentImageData.landscape = img.dataset.landscape || img.src;
+
+        // 元の画像がportraitかlandscapeかを判定
+        const isLandscape = img.src.includes('landscape');
+        const mode = isLandscape ? 'landscape' : 'portrait';
+
+        lightboxImg.src = currentImageData[mode];
+        lightboxImg.alt = img.alt;
+
+        // ボタンの状態を更新
+        toggleBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.mode === mode);
+        });
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // 切り替えボタン
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const mode = btn.dataset.mode;
+        lightboxImg.src = currentImageData[mode];
+
+        toggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxClose) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>
