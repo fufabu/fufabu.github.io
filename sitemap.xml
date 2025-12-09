@@ -22,6 +22,24 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Changelog: English -->
+  <url>
+    <loc>https://fufabu.github.io/companion-for-j6/changelog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fufabu.github.io/companion-for-j6/changelog.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://fufabu.github.io/companion-for-j6/ja/changelog.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Changelog: Japanese -->
+  <url>
+    <loc>https://fufabu.github.io/companion-for-j6/ja/changelog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fufabu.github.io/companion-for-j6/changelog.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://fufabu.github.io/companion-for-j6/ja/changelog.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Privacy Policy: English -->
   <url>
     <loc>https://fufabu.github.io/companion-for-j6/en/privacy.html</loc>

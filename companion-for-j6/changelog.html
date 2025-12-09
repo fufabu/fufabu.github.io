@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog | Companion for J-6</title>
+  <meta name="description" content="View all updates and release notes for Companion for J-6.">
+  <link rel="canonical" href="https://fufabu.github.io/companion-for-j6/changelog.html">
+  <link rel="alternate" hreflang="en" href="https://fufabu.github.io/companion-for-j6/changelog.html">
+  <link rel="alternate" hreflang="ja" href="https://fufabu.github.io/companion-for-j6/ja/changelog.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    .j6-brand { color: #2196F3; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 24px 0;
+      background-image: linear-gradient(to right, transparent, #2196F3 15%, #2196F3 85%, transparent);
+      background-size: 100% 3px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .lang-selector {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-selector a {
+      padding: 6px 12px;
+      color: #888;
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .lang-selector a:hover {
+      color: #fff;
+      background-color: #1a1a1a;
+    }
+
+    .lang-selector a.active {
+      color: #e85d2d;
+      background-color: #1a1a1a;
+    }
+
+    main {
+      padding: 60px 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #888;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #2196F3;
+      text-decoration: none;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .release {
+      margin-bottom: 48px;
+      padding: 32px;
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+    }
+
+    .release-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .release-version {
+      background-color: #2196F3;
+      color: #000;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .release-date {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .release-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .release-section {
+      margin-bottom: 20px;
+    }
+
+    .release-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .release-section h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e85d2d;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .release-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .release-section li {
+      color: #aaa;
+      font-size: 0.95rem;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .release-section li::before {
+      content: "•";
+      color: #2196F3;
+      position: absolute;
+      left: 0;
+    }
+
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid #222;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #555;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      .release {
+        padding: 24px;
+      }
+
+      .release-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="./" class="logo">
+          <img src="images/icon.png" alt="App icon" class="logo-icon">
+          Companion for <span class="j6-brand">J-6</span>
+        </a>
+        <div class="lang-selector">
+          <a href="changelog.html" class="active">EN</a>
+          <a href="ja/changelog.html">JA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <a href="./" class="back-link">&larr; Back to home</a>
+      <h1>Changelog</h1>
+      <p class="subtitle">All updates and release notes</p>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.4</span>
+          <span class="release-date">December 9, 2025</span>
+        </div>
+        <p class="release-title">Two-way Pattern Sync & MIDI Stability</p>
+        <div class="release-section">
+          <h3>New Features</h3>
+          <ul>
+            <li>Two-way pattern sync: Pattern changes on your J-6 now reflect instantly in the app</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed MIDI message reception after reconnecting</li>
+            <li>Improved disconnect detection when device is unplugged</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.3</span>
+          <span class="release-date">December 8, 2025</span>
+        </div>
+        <p class="release-title">Connection Diagnostics & Accessibility</p>
+        <div class="release-section">
+          <h3>New Features</h3>
+          <ul>
+            <li>Connection diagnostic wizard: 6-step troubleshooting guide when device isn't found</li>
+            <li>Error notifications: MIDI operation errors now shown via snackbar</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>Accessibility</h3>
+          <ul>
+            <li>Added screen reader support for remote control, pattern selection, and settings screens</li>
+            <li>All interactive elements now have proper accessibility labels</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>Improvements</h3>
+          <ul>
+            <li>Redesigned settings UI with new Interaction section</li>
+            <li>Added icons and badges to settings for better visual feedback</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.2</span>
+          <span class="release-date">December 8, 2025</span>
+        </div>
+        <p class="release-title">Internal Quality Improvements</p>
+        <div class="release-section">
+          <h3>Improvements</h3>
+          <ul>
+            <li>Major code refactoring for better maintainability</li>
+            <li>Added 200+ unit tests for improved reliability</li>
+            <li>Reduced codebase size by 8,000+ lines</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.1</span>
+          <span class="release-date">December 6, 2025</span>
+        </div>
+        <p class="release-title">Style Reference & Dark Mode</p>
+        <div class="release-section">
+          <h3>New Features</h3>
+          <ul>
+            <li>Style & Variation reference: View all 9 styles × 12 variations at a glance</li>
+            <li>Updated screenshots to dark theme</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed fallback locale from Japanese to English for better international support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.0.0</span>
+          <span class="release-date">December 3, 2025</span>
+        </div>
+        <p class="release-title">Initial Release</p>
+        <div class="release-section">
+          <h3>Features</h3>
+          <ul>
+            <li>Pattern selection: 64 patterns (8 banks × 8) with visual grid</li>
+            <li>BPM control: 40-300 BPM with slider and quick buttons</li>
+            <li>Transport control: Play/Stop with dedicated buttons</li>
+            <li>Chord set browser: Browse all 100 built-in chord sets with piano keyboard visualization</li>
+            <li>USB MIDI connection with auto-reconnect</li>
+            <li>Portrait and landscape support</li>
+            <li>English and Japanese localization</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="copyright">© 2025 fufabu</p>
+    </div>
+  </footer>
+</body>
+</html>

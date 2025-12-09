@@ -228,6 +228,94 @@
       }
     }
 
+    /* What's New */
+    .whats-new {
+      padding: 60px 0;
+      border-top: none;
+      background-image: linear-gradient(to right, transparent, #2196F3 15%, #2196F3 85%, transparent);
+      background-size: 100% 3px;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+
+    .whats-new h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .update-card {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 24px;
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+    }
+
+    .update-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .update-version {
+      background-color: #2196F3;
+      color: #000;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .update-date {
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .update-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .update-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .update-list li {
+      color: #888;
+      font-size: 0.9rem;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .update-list li::before {
+      content: "•";
+      color: #e85d2d;
+      position: absolute;
+      left: 0;
+    }
+
+    .changelog-link {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
+      color: #2196F3;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .changelog-link:hover {
+      text-decoration: underline;
+    }
+
     /* Why This App */
     .why-app {
       padding: 80px 0;
@@ -862,6 +950,27 @@
           <img src="images/ChordSetList_portrait.png" alt="Chord sets" data-portrait="images/ChordSetList_portrait.png" data-landscape="images/ChordSetList_landscape.png">
           <img src="images/StyleReference_portrait.png" alt="Phrases" data-portrait="images/StyleReference_portrait.png" data-landscape="images/StyleReference_landscape.png">
         </div>
+      </div>
+    </section>
+
+    <section class="whats-new">
+      <div class="container">
+        <h2>What's New</h2>
+        <div class="update-card">
+          <div class="update-header">
+            <span class="update-version">v1.1.4</span>
+            <span class="update-date">Dec 9, 2025</span>
+          </div>
+          <div class="update-content">
+            <p class="update-title">Two-way Pattern Sync & MIDI Stability</p>
+            <ul class="update-list">
+              <li>Pattern changes on your J-6 now reflect instantly in the app</li>
+              <li>Improved MIDI reconnection reliability</li>
+              <li>Better disconnect detection</li>
+            </ul>
+          </div>
+        </div>
+        <a href="changelog.html" class="changelog-link">View all updates →</a>
       </div>
     </section>
 

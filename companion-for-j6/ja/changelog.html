@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>更新履歴 | Companion for J-6</title>
+  <meta name="description" content="Companion for J-6 の全アップデートとリリースノート。">
+  <link rel="canonical" href="https://fufabu.github.io/companion-for-j6/ja/changelog.html">
+  <link rel="alternate" hreflang="en" href="https://fufabu.github.io/companion-for-j6/changelog.html">
+  <link rel="alternate" hreflang="ja" href="https://fufabu.github.io/companion-for-j6/ja/changelog.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    .j6-brand { color: #2196F3; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 24px 0;
+      background-image: linear-gradient(to right, transparent, #2196F3 15%, #2196F3 85%, transparent);
+      background-size: 100% 3px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .lang-selector {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-selector a {
+      padding: 6px 12px;
+      color: #888;
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .lang-selector a:hover {
+      color: #fff;
+      background-color: #1a1a1a;
+    }
+
+    .lang-selector a.active {
+      color: #e85d2d;
+      background-color: #1a1a1a;
+    }
+
+    main {
+      padding: 60px 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #888;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #2196F3;
+      text-decoration: none;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .release {
+      margin-bottom: 48px;
+      padding: 32px;
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+    }
+
+    .release-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .release-version {
+      background-color: #2196F3;
+      color: #000;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .release-date {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .release-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .release-section {
+      margin-bottom: 20px;
+    }
+
+    .release-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .release-section h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e85d2d;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .release-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .release-section li {
+      color: #aaa;
+      font-size: 0.95rem;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .release-section li::before {
+      content: "•";
+      color: #2196F3;
+      position: absolute;
+      left: 0;
+    }
+
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid #222;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #555;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      .release {
+        padding: 24px;
+      }
+
+      .release-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="./" class="logo">
+          <img src="../images/icon.png" alt="App icon" class="logo-icon">
+          Companion for <span class="j6-brand">J-6</span>
+        </a>
+        <div class="lang-selector">
+          <a href="../changelog.html">EN</a>
+          <a href="changelog.html" class="active">JA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <a href="./" class="back-link">&larr; ホームに戻る</a>
+      <h1>更新履歴</h1>
+      <p class="subtitle">すべてのアップデートとリリースノート</p>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.4</span>
+          <span class="release-date">2025年12月9日</span>
+        </div>
+        <p class="release-title">双方向パターン同期・MIDI安定性向上</p>
+        <div class="release-section">
+          <h3>新機能</h3>
+          <ul>
+            <li>双方向パターン同期: J-6本体でパターンを変更するとアプリのUIに即座に反映</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>バグ修正</h3>
+          <ul>
+            <li>再接続後にMIDIメッセージを受信できない問題を修正</li>
+            <li>デバイス切断時の検出を改善</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.3</span>
+          <span class="release-date">2025年12月8日</span>
+        </div>
+        <p class="release-title">接続診断・アクセシビリティ改善</p>
+        <div class="release-section">
+          <h3>新機能</h3>
+          <ul>
+            <li>接続診断ウィザード: デバイスが見つからない場合の6ステップトラブルシューティングガイド</li>
+            <li>エラー通知: MIDI操作エラーをSnackBarで表示</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>アクセシビリティ</h3>
+          <ul>
+            <li>リモートコントロール、パターン選択、設定画面にスクリーンリーダー対応を追加</li>
+            <li>すべてのインタラクティブ要素に適切なアクセシビリティラベルを追加</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>改善</h3>
+          <ul>
+            <li>設定UIを再設計、Interactionセクションを新設</li>
+            <li>設定にアイコンとバッジを追加し視認性を向上</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.2</span>
+          <span class="release-date">2025年12月8日</span>
+        </div>
+        <p class="release-title">内部品質改善</p>
+        <div class="release-section">
+          <h3>改善</h3>
+          <ul>
+            <li>メンテナンス性向上のための大規模リファクタリング</li>
+            <li>信頼性向上のため200以上のユニットテストを追加</li>
+            <li>コードベースを8,000行以上削減</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.1.1</span>
+          <span class="release-date">2025年12月6日</span>
+        </div>
+        <p class="release-title">スタイルリファレンス・ダークモード</p>
+        <div class="release-section">
+          <h3>新機能</h3>
+          <ul>
+            <li>スタイル/バリエーションリファレンス: 9スタイル × 12バリエーションを一覧表示</li>
+            <li>スクリーンショットをダークテーマに更新</li>
+          </ul>
+        </div>
+        <div class="release-section">
+          <h3>バグ修正</h3>
+          <ul>
+            <li>フォールバックロケールを日本語から英語に変更（国際対応の改善）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.0.0</span>
+          <span class="release-date">2025年12月3日</span>
+        </div>
+        <p class="release-title">初回リリース</p>
+        <div class="release-section">
+          <h3>機能</h3>
+          <ul>
+            <li>パターン選択: 64パターン（8バンク × 8）をグリッド表示</li>
+            <li>BPM調整: スライダーとクイックボタンで40-300 BPMを調整</li>
+            <li>トランスポート操作: 専用ボタンで再生/停止</li>
+            <li>コードセット一覧: 内蔵100種類のコードセットを鍵盤付きで表示</li>
+            <li>USB MIDI接続（自動再接続対応）</li>
+            <li>縦画面・横画面対応</li>
+            <li>日本語・英語対応</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="copyright">© 2025 fufabu</p>
+    </div>
+  </footer>
+</body>
+</html>
