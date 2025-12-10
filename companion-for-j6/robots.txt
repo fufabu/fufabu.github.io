@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fufabu.github.io/companion-for-j6/sitemap.xml
